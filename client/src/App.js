@@ -9,14 +9,20 @@ import ProductDetails from './components/ProductDetail';
 import ShowProduct from './components/ShowProducts';
 import UpdateProduct from './components/UpdateProducts';
 import NavBarMenu from './components/NavBarMenu';
+
+import {BrowserRouter as Router , Route , Routes  } from 'react-router-dom'
+import {} from 'react-dom'
 function App() {
   return (
     <div className="App">
       <NavBarMenu/>
-      {/* <AddProducts/>
-      <ProductDetails/>
-      <ShowProduct/>
-      <UpdateProduct/> */}
+      <Router>
+        <Routes>
+          <Route exact path='/' Component={ShowProduct}/>
+          <Route exact path='/AddProduct' Component={AddProducts}/>
+        </Routes>
+      </Router>
+      
     </div>
   );
 }

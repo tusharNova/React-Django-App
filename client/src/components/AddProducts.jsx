@@ -2,10 +2,10 @@ import React from "react";
 
 
 // createBootstrapComponent
-const AddProducts = () => {
+const AddProduct = () => {
     return(
         <div className="h2 display-3">AddProducts</div>
     )
 }
 
-export default AddProducts;
+export default AddProduct;

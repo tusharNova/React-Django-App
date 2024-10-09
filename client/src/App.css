@@ -54,3 +54,10 @@
   color: #282c34;
 
 }
+
+.product-item-show{
+  display: flex;
+  flex-direction: row;
+  margin: 5px;
+  padding: 2px;
+}

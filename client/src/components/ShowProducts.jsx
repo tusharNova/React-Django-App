@@ -7,6 +7,9 @@ import axios from 'axios'
         console.log(response.data);
     }
  
+    useEffect(() =>{
+        getProducts();
+    } , []);
 
 
 

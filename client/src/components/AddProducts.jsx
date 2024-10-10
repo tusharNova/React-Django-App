@@ -14,12 +14,13 @@ const AddProduct = () => {
       <div className="container">
         <h1>Add Products</h1>
         <div className="form-group mt-2">
+            <label htmlFor="image">Select Image To Upload</label>
           <input
             type="file"
             className="form-control form-control-lg"
             placeholder="Enter Product File"
-            name="name"
-            value={image}
+            name="image"
+            // value={image}
             onChange={(e) => setImage(e.target.files[0])}
           />
         </div>
@@ -63,6 +64,9 @@ const AddProduct = () => {
             onChange={(e) => setCategory(e.target.value)}
           />
         </div>
+        <button className="btn btn-primary">
+          Submit
+        </button>
       </div>
     </>
   );

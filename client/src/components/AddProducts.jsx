@@ -8,6 +8,11 @@ const AddProduct = () => {
   const [description, setDescription] = useState(null);
   const [category, setCategory] = useState(null);
 
+
+  const AddProducts = async () =>{
+    
+  }
+
   return (
     <>
       {/* <div className="h2 display-3">AddProducts</div> */}
@@ -15,12 +20,12 @@ const AddProduct = () => {
         <h1>Add Products</h1>
         <div className="form-group mt-2">
             <label htmlFor="image">Select Image To Upload</label>
+            <img src={image} alt="" />
           <input
             type="file"
             className="form-control form-control-lg"
             placeholder="Enter Product File"
             name="image"
-            // value={image}
             onChange={(e) => setImage(e.target.files[0])}
           />
         </div>
@@ -64,8 +69,8 @@ const AddProduct = () => {
             onChange={(e) => setCategory(e.target.value)}
           />
         </div>
-        <button className="btn btn-primary">
-          Submit
+        <button className="btn btn-primary" onClick={AddProducts}>
+          Add Products
         </button>
       </div>
     </>

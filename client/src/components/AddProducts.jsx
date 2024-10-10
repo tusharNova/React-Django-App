@@ -10,6 +10,13 @@ const AddProduct = () => {
 
 
   const AddProducts = async () =>{
+    let formField = new FormData()
+
+    formField.append('' , name );
+    formField.append('' , name );
+    formField.append('' , name );
+    formField.append('' , name );
+    formField.append('' , name );
     
   }
 

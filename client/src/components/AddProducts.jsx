@@ -1,6 +1,9 @@
 import React, { useEffect, useState } from "react";
-// import {Container} form 'react-bootstrap'
+
 // createBootstrapComponent
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+
 const AddProduct = () => {
   const [image, setImage] = useState(null);
   const [name, setName] = useState(null);
@@ -8,17 +11,32 @@ const AddProduct = () => {
   const [description, setDescription] = useState(null);
   const [category, setCategory] = useState(null);
 
+  const navigate = useNavigate();
 
-  const AddProducts = async () =>{
-    let formField = new FormData()
+  const AddProducts = async () => {
+    let formField = new FormData();
 
-    formField.append('' , name );
-    formField.append('' , name );
-    formField.append('' , name );
-    formField.append('' , name );
-    formField.append('' , name );
-    
-  }
+    formField.append("name", name);
+    formField.append("price", price);
+    formField.append("description", description);
+    formField.append("category", category);
+    if (image != null) {
+      formField.append("image", image);
+    }
+
+    await axios({
+      method: 'post',
+      url: 'http://127.0.0.1:8000/api/',
+      data: formField,
+    })
+      .then((response) => {
+        console.log(response.data);
+        navigate.push("/");
+      })
+      .catch((error) => {
+        console.log(error);
+      });
+  };
 
   return (
     <>
@@ -26,8 +44,8 @@ const AddProduct = () => {
       <div className="container">
         <h1>Add Products</h1>
         <div className="form-group mt-2">
-            <label htmlFor="image">Select Image To Upload</label>
-            <img src={image} alt="" />
+          <label htmlFor="image">Select Image To Upload</label>
+          <img src={image} alt="" />
           <input
             type="file"
             className="form-control form-control-lg"

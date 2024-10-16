@@ -5,9 +5,9 @@ import AddProducts from './components/AddProducts';
 import "bootstrap/dist/css/bootstrap.min.css";
 // Bootstrap Bundle JS
 import "bootstrap/dist/js/bootstrap.bundle.min";
-import ProductDetails from './components/ProductDetail';
+// import ProductDetails from './components/ProductDetail';
 import ShowProduct from './components/ShowProducts';
-import UpdateProduct from './components/UpdateProducts';
+// import UpdateProduct from './components/UpdateProducts';
 import NavBarMenu from './components/NavBarMenu';
 
 import {BrowserRouter as Router , Route , Routes  } from 'react-router-dom'
@@ -19,6 +19,8 @@ function App() {
       <Router>
         <Routes>
           <Route exact path='/' Component={ShowProduct}/>
+          <Route exact path='/AddProduct' Component={AddProducts}/>
+          <Route exact path='/AddProduct' Component={AddProducts}/>
           <Route exact path='/AddProduct' Component={AddProducts}/>
         </Routes>
       </Router>

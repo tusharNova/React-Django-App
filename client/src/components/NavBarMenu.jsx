@@ -1,5 +1,5 @@
 import React from "react";
-import Container  from "react-bootstrap/Container";
+// import Container  from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 // import NavDropdown from "react-bootstrap/NavDropdown";
@@ -20,6 +20,8 @@ const NavBarMenu = () => {
             <Nav className="mr-auto">
               <Nav.Link href="/" className="show-product-nav" >Product</Nav.Link>
               <Nav.Link href="/addProduct" className="add-product-nav">Add Products </Nav.Link>
+              {/* <Nav.Link href="/addProduct" className="add-product-nav">Product </Nav.Link>
+              <Nav.Link href="/addProduct" className="add-product-nav">ducts </Nav.Link> */}
             </Nav>
           </Navbar.Collapse>
         

@@ -154,6 +154,8 @@ const AddProduct = () => {
     setImage(file);
     if (file) {
       setImagePreview(URL.createObjectURL(file));
+    } else {
+      setImagePreview(null); // Reset preview if no file is selected
     }
   };
 
@@ -218,7 +220,9 @@ const AddProduct = () => {
             className="form-control form-control-lg"
             placeholder="Enter Product File"
             name="image"
+            accept="image/*" // Ensures only images can be selected
             onChange={handleImageChange}
+            required // Make the field required
           />
         </div>
         <div className="form-group mt-2">
@@ -229,6 +233,7 @@ const AddProduct = () => {
             name="name"
             value={name}
             onChange={(e) => setName(e.target.value)}
+            required // Make the field required
           />
         </div>
         <div className="form-group mt-2">
@@ -239,16 +244,17 @@ const AddProduct = () => {
             name="price"
             value={price}
             onChange={(e) => setPrice(e.target.value)}
+            required // Make the field required
           />
         </div>
         <div className="form-group mt-2">
           <textarea
-            type="text"
             className="form-control form-control-lg"
             placeholder="Enter Product Description"
             name="description"
             value={description}
             onChange={(e) => setDescription(e.target.value)}
+            required // Make the field required
           />
         </div>
         <div className="form-group mt-2">
@@ -259,6 +265,7 @@ const AddProduct = () => {
             name="category"
             value={category}
             onChange={(e) => setCategory(e.target.value)}
+            required // Make the field required
           />
         </div>
         <button className="btn btn-primary mt-3" onClick={AddProducts}>

@@ -18,7 +18,7 @@ const ShowProduct = () => {
   return (
     <div className="product-item-show">
       {products.map((product, index) => (
-        <Card className="m-2 rounded shadow-lg" style={{ width: "22rem" }}>
+        <Card key={product.id} className="m-2 rounded shadow-lg" style={{ width: "22rem" }}>
           <Card.Img variant="top" src={product.images} />
           <Card.Body>
             <Card.Title>{product.name}</Card.Title>

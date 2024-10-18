@@ -8,3 +8,10 @@ class ProductView(viewsets.ModelViewSet):
     serializer_class = ProductSerializer
 
 
+class NewModel():
+    def __init__(self) -> None:
+        pass
+    
+    def test(self):
+        pass
+    

@@ -43,6 +43,11 @@ MIDDLEWARE = [
 
 ROOT_URLCONF = 'server.urls'
 
+CORS_ORIGIN_ALLOW_ALL = True
+
+ALLOWED_HOSTS = ['*']
+
+
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',

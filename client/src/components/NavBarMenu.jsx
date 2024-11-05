@@ -22,7 +22,7 @@ const NavBarMenu = () => {
               <Nav.Link href="/addProduct" className="add-product-nav">Add Products </Nav.Link>
               {/* <Nav.Link href="/addProduct" className="add-product-nav">Product </Nav.Link>
               <Nav.Link href="/addProduct" className="add-product-nav">ducts </Nav.Link> */}
-            </Nav>
+            </Nav>  
           </Navbar.Collapse>
         
       </Navbar>

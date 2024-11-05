@@ -13,11 +13,11 @@ const AddProduct = () => {
 
   // Handle file input
   const handleImageChange = (e) => {
-    setImage(e.target.files[0]); // Grab the first file (single file input)
+    setImage(e.target.files[0]); 
   };
 
   const AddProducts = async (e) => {
-    e.preventDefault(); // Prevent form submission refresh
+    e.preventDefault(); 
 
     let formField = new FormData();
     
@@ -26,13 +26,13 @@ const AddProduct = () => {
     formField.append("price", price);
     formField.append("description", description);
     formField.append("category", category);
-    // Append the image file, but with correct key 'images'
+    
     if (image) {
-      formField.append("images", image); // Use 'images' if that's what the backend expects
+      formField.append("images", image); 
     }
 
     try {
-      // Make the POST request with axios
+      
       const response = await axios.post("http://127.0.0.1:8000/api/", formField, {
         headers: {
           "Content-Type": "multipart/form-data", // Important for file uploads

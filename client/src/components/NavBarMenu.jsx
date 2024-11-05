@@ -1,8 +1,8 @@
 import React from "react";
-// import Container  from "react-bootstrap/Container";
+
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-// import NavDropdown from "react-bootstrap/NavDropdown";
+
 
 const NavBarMenu = () => {
   return (
@@ -14,14 +14,14 @@ const NavBarMenu = () => {
         data-bs-theme="dark"
       >
         
+
           <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="mr-auto">
               <Nav.Link href="/" className="show-product-nav" >Product</Nav.Link>
               <Nav.Link href="/addProduct" className="add-product-nav">Add Products </Nav.Link>
-              {/* <Nav.Link href="/addProduct" className="add-product-nav">Product </Nav.Link>
-              <Nav.Link href="/addProduct" className="add-product-nav">ducts </Nav.Link> */}
+              
             </Nav>  
           </Navbar.Collapse>
         

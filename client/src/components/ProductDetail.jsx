@@ -1,33 +1,38 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import { useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 
- const ProductDetails = () => {
+const ProductDetails = () => {
+  const [product, setProduct] = useState("");
 
-    const [product , setProduct] = useState("");
+  const { id } = useParams();
 
-    const { id } = useParams();
+  const getSingleProduct = async () => {
+    const { data } = await axios.get(`http://127.0.0.1:8000/api/${id}/`);
+    console.log(data);
+    setProduct(data);
+  };
 
-    const getSingleProduct = async () => {
-        const { data } = await axios.get(`http://127.0.0.1:8000/api/${id}/`)
-        console.log(data)
-        setProduct(data)
-    } 
+  useEffect(() => {
+    getSingleProduct();
+  }, []);
 
-    useEffect(() =>{
-        getSingleProduct();
-    } ,[])
+  return (
+    <div>
+      <h1>Product Detail</h1>
+      <div className="single-product-info">
+        <img src={product.images} alt="" srcset="" height="200" width="300" />
+        <p>{product.name}</p>
+        <p>{product.price} </p>
+        <p>{product.description} </p>
+        <p>{product.category} </p>
 
-
-    return (
-        <div>
-            <h1>Product Detail</h1>
-            <div className='single-product-infos'>
-                <p>{product.name}</p>
-                <img src={product.images} alt="" srcset="" />
-            </div>
-        </div>
-    )
-}
+        <Link className="btn btn-info m-2" to={`/${product.id}/update`}>Update</Link>
+        <Link className="btn btn-danger m-2">Delete</Link>
+      </div>
+    </div>
+  );
+};
 
 export default ProductDetails;

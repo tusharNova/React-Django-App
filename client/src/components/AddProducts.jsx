@@ -4,7 +4,7 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const AddProduct = () => {
-  const [image, setImage] = useState(null); // Store the image file
+  const [image, setImage] = useState(null); 
   const [name, setName] = useState("");
   const [price, setPrice] = useState("");
   const [description, setDescription] = useState("");
@@ -21,26 +21,26 @@ const AddProduct = () => {
 
     let formField = new FormData();
     
-    // Append other form fields
+    
     formField.append("name", name);
     formField.append("price", price);
     formField.append("description", description);
     formField.append("category", category);
     
     if (image) {
-      formField.append("images", image); 
+      formField.append("images", image);
     }
 
     try {
       
       const response = await axios.post("http://127.0.0.1:8000/api/", formField, {
         headers: {
-          "Content-Type": "multipart/form-data", // Important for file uploads
+          "Content-Type": "multipart/form-data",
         },
       });
 
       console.log(response.data);
-      navigate("/"); // Navigate on success
+      navigate("/"); 
     } catch (error) {
       console.error("Error uploading product:", error.response || error);
     }
@@ -56,7 +56,7 @@ const AddProduct = () => {
             type="file"
             className="form-control form-control-lg"
             name="image"
-            onChange={handleImageChange} // Handle file input
+            onChange={handleImageChange} 
           />
         </div>
         <div className="form-group mt-2">

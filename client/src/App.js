@@ -1,4 +1,3 @@
-// import logo from './logo.svg';
 import './App.css';
 import AddProducts from './components/AddProducts';
 // Bootstrap CSS
@@ -22,7 +21,7 @@ function App() {
           <Route exact path='/' Component={ShowProduct}/>
           <Route exact path='/AddProduct' Component={AddProducts}/>
           <Route exact path='/:id/' Component={ProductDetails}/>
-          <Route exact path='/:id/UpdateProduct' Component={UpdateProduct}/>
+          <Route exact path='/:id/update' Component={UpdateProduct}/>
         </Routes>
       </Router>
       
